@@ -42,7 +42,7 @@ export default function Home() {
       <main className={styles.main}>
         <h3>Gift~Lofty Generator 🎁 💡</h3>
         <form onSubmit={onSubmit}>
-          <label>For who is the gift?</label>
+          <label>Who is the gift for?</label>
           <select
             name="gender"
             value={gender}
@@ -96,7 +96,7 @@ export default function Home() {
         {loading && (
           <div>
             <h3>Looking for the best gift ideas 🎁 💡</h3>
-            <img src="../loading.gif" className={styles.loading} />
+            <img src="/loading.gif" className={styles.loading} />
           </div>
         )}
         <div
