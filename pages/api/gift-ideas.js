@@ -7,9 +7,11 @@ const openai = new OpenAIApi(configuration);
 
 export default async function (req, res) {
   const { priceMin, priceMax, gender, age, hobbies } = req.body;
+  const prompt = generatePrompt(priceMin, priceMax, gender, age, hobbies);
+  
   const completion = await openai.createCompletion({
     model: 'text-davinci-003',
-    prompt: generatePrompt(priceMin, priceMax, gender, age, hobbies), 
+    prompt: prompt, 
     temperature: 0.6,
     max_tokens: 2048,
   });

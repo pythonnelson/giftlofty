@@ -5,9 +5,9 @@ import styles from './index.module.css';
 
 export default function Home() {
   const [gender, setGender] = useState('man');
-  const [age, setAge] = useState(30);
-  const [priceMin, setPriceMin] = useState(25);
-  const [priceMax, setPriceMax] = useState(100);
+  const [age, setAge] = useState(0);
+  const [priceMin, setPriceMin] = useState(0);
+  const [priceMax, setPriceMax] = useState(1);
   const [hobbies, setHobbies] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -20,7 +20,7 @@ export default function Home() {
     }
     setLoading(true);
     setResult('');
-    const response = await fetch('/api/generate-gifts', {
+    const response = await fetch('/api/gift-ideas', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h3>Christmas gift generator 🎁 💡</h3>
+        <h3>Gift~Lofty Generator 🎁 💡</h3>
         <form onSubmit={onSubmit}>
           <label>For who is the gift?</label>
           <select
@@ -96,7 +96,7 @@ export default function Home() {
         {loading && (
           <div>
             <h3>Looking for the best gift ideas 🎁 💡</h3>
-            <img src="/loading.webp" className={styles.loading} />
+            <img src="../loading.gif" className={styles.loading} />
           </div>
         )}
         <div

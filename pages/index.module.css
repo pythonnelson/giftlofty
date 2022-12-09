@@ -63,6 +63,9 @@
   cursor: pointer;
 }
 .main .result {
-  font-weight: bold;
+  font-weight: 'normal';
   margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
 }
